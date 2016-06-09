@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+%设置中文默认字体为宋体
+\usepackage{xeCJK}
+	\setCJKmainfont{simsun.ttc}
+%设置英文默认字体为Times New Roman	
+\usepackage{fontspec}
+	\setmainfont{times.ttf}
+%设置首行缩进两个字符	
+\usepackage{indentfirst}
+	\setlength{\parindent}{2em}
+%设置段间距为一倍	
+\setlength{\parskip}{1em}
+%设置默认生成书签
+\usepackage[bookmarks=true]{hyperref}
+%设置1.5倍行间距
+\linespread{1.25}\selectfont
+%设置页边距
+\usepackage[left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm]{geometry}
+%------------------设置字体-------------------%
+\usepackage{fontspec,xunicode,xltxtra} 
+\newfontfamily\songti{simsun.ttc}			%宋体
+\newfontfamily\kaiti{simkai.ttf} 		%楷体
+\newfontfamily\heiti{simhei.ttf}			%黑体
+\newfontfamily\yahei{msyh.ttc}				%微软雅黑
+\newfontfamily\times{times.ttf} 			%Times New Romans
+%------------------设置字号-----------------%
+\usepackage{fontspec,xunicode,xltxtra} 
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     %初号
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} %小初号
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      %一号
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      %二号
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  %小二号
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  %三号
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      %四号
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  %小四号
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    %五号
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   %小五号
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  %六号
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    %七号
+%---------------代码---------------%
+\usepackage{listings}
+\lstset{
+	%行号
+	numbers=left,
+	%背景框
+	framexleftmargin=10mm,
+	frame=none,
+	%背景色
+	%backgroundcolor=\color[rgb]{1,1,0.76},
+	backgroundcolor=\color[RGB]{245,245,244},
+	%样式
+	keywordstyle=\bf\color{blue},
+	identifierstyle=\bf,
+	numberstyle=\color[RGB]{0,192,192},
+	commentstyle=\it\color[RGB]{0,96,96},
+	stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
+	%显示空格
+	showstringspaces=false}
+%------------------页眉页脚-----------------%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{\leftmark}
+\fancyhead[LE]{\rightmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%---------------汉化日期--------------------%
+\renewcommand{\today}{\number\year 年\number\month 月\number\day 日}
+%---------------汉化目录--------------------%
+\renewcommand{\contentsname}{目 \quad 录}
+%---------------汉化标题--------------------%
+\usepackage{titlesec}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+%----------------中英文摘要---------------%
+\newcommand{\enabstractname}{Abstract}
+\newcommand{\cnabstractname}{摘要}
+\newenvironment{enabstract}{%英文摘要
+	\par\small
+	\noindent\mbox{}\hfill{\bfseries \enabstractname}\hfill\mbox{}\par
+	\vskip 2.5ex}{\par\vskip 2.5ex}
+\newenvironment{cnabstract}{%中文摘要
+	\par\small
+	\noindent\mbox{}\hfill{\bfseries \cnabstractname}\hfill\mbox{}\par
+	\vskip 2.5ex}{\par\vskip 2.5ex}
+%-------------参考文献右上角------------------%
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+\bibliographystyle{plain}
+%------------------汉化图表标题----------------%
+\usepackage{caption}
+\renewcommand\figurename{\hei 图}
+\renewcommand\tablename{\hei 表}
+%-----------------标题页---------------------%
+\title{题目}
+\author{作者}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+正文
+%\bibliography{<bibfile>}
+\end{document}
